@@ -15,3 +15,4 @@ npx graphql-codegen init
 npx graphql-codegen
 npm i @emotion/react @emotion/styled
 npm i @mui/material
+npm i @mui/icons-material
