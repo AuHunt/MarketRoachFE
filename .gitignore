@@ -115,16 +115,28 @@ dist
 
 # DynamoDB Local files
 .dynamodb/
+# Node.js dependencies
+node_modules/
 
-# TernJS port file
-.tern-port
+# Build artifacts
+dist/
+build/
 
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
+# Logs
+*.log
 
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
+# Environment variables
+.env
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.iml
