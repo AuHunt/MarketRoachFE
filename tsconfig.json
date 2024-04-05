@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2022", // Target the latest stable ECMAScript version
+        "target": "esnext", // Target the latest stable ECMAScript version
         "module": "esnext", // Use ES modules
         "lib": ["dom", "esnext"], // Include DOM and latest ECMAScript library types
         "jsx": "react", // Enable JSX for React
@@ -14,7 +14,7 @@
         "outDir": "dist", // Specify the output directory for the compiled files
         "baseUrl": ".", // Specify the base directory to resolve non-relative module names
         "paths": {
-            // Add any necessary path mappings here
+            "@/*": ["src/*"]
         }
     },
     "include": [
