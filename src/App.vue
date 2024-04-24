@@ -26,15 +26,23 @@ export default {
     --text-color: white;
 }
 
-.app {
-    width: 100%;
+html,
+body {
+    margin: 0;
+    padding: 0;
     height: 100%;
+    width: 100%;
 }
 
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    height: 99vh;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .app-container {
@@ -47,8 +55,8 @@ body {
 .grid-view {
     display: grid;
     box-sizing: border-box;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 70% 30%;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: 7fr 3fr;
     gap: 10px;
     width: 100%;
     height: 100%;
