@@ -2,6 +2,12 @@
     <div>
         <h1>Market Roach</h1>
     </div>
+    <div>
+        <h1>Market Roach</h1>
+    </div>
+    <div>
+        <h1>Market Roach</h1>
+    </div>
 </template>
 
 <script>

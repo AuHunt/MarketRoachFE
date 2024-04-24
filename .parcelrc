@@ -1,6 +1,13 @@
 {
-  "extends": "@parcel/config-default",
-  "transformers": {
-    "*.vue": ["@parcel/transformer-vue"]
-  }
+    "extends": "@parcel/config-default",
+    "validators": {
+        "*.ts": [
+            "@parcel/validator-typescript"
+        ]
+    },
+    "transformers": {
+        "*.vue": [
+            "@parcel/transformer-vue"
+        ]
+    }
 }
