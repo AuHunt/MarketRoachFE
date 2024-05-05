@@ -1,29 +1,61 @@
 <template>
-    <v-main width="100%" height="100%">
-        <div class="grid-view">
-            <section class="grid-item">
-                <h1>Market Roach</h1>
-            </section>
-            <section class="grid-item tall-grid-item" style="overflow-y: scroll">
-                <v-infinite-scroll :items="items" @load="load">
-                    <template v-for="(item, index) in items" :key="item">
-                        <div :class="['pa-2', index % 2 === 0 ? 'bg-grey-lighten-2' : '']">
-                            Item number #{{ item }}
-                        </div>
-                    </template>
-                </v-infinite-scroll>
-            </section>
-            <section class="grid-item">
-                <h1>Market Roach</h1>
-            </section>
-        </div>
-    </v-main>
+    <v-app style="height: 100vh">
+        <v-app-bar class="outliner" title="Application bar"></v-app-bar>
+        <!-- <v-navigation-drawer floating temporary></v-navigation-drawer> -->
+        <v-main class="app-main fill-height">
+            <v-container class="fill-height outliner" fluid>
+                <v-row class="fill-height" no-gutters>
+                    <v-col cols="12" md="9" class="outliner">
+                        <v-row
+                            class="outliner"
+                            style="height: 70%; min-height: 550px; margin-bottom: 5px"
+                            no-gutters
+                        >
+                            <v-col>
+                                <h1>Market Roach</h1>
+                            </v-col>
+                        </v-row>
+                        <v-row class="outliner" style="height: 30%; min-height: 230px" no-gutters>
+                            <v-col>
+                                <h1>Market Roach</h1>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                    <v-col cols="12" md="3" class="outliner fill-height">
+                        <v-row style="height: 10%; max-height: 80px" no-gutters>
+                            <v-col class="outliner"></v-col>
+                        </v-row>
+                        <v-row style="height: 90%; max-height: 720px" no-gutters>
+                            <v-col class="fill-height">
+                                <v-infinite-scroll
+                                    class="outliner tall-grid-item"
+                                    :items="items"
+                                    @load="load"
+                                >
+                                    <template v-for="(item, index) in items" :key="item">
+                                        <div
+                                            :class="[
+                                                'pa-2',
+                                                index % 2 === 0 ? 'bg-grey-lighten-2' : '',
+                                            ]"
+                                        >
+                                            Item number #{{ item }}
+                                        </div>
+                                    </template>
+                                </v-infinite-scroll>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-main>
+    </v-app>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 
-const items = ref(Array.from({ length: 30 }, (k, v) => v + 1))
+const items = ref(Array.from({ length: 5 }, (k, v) => v + 1))
 
 async function api() {
     return new Promise((resolve) => {
@@ -32,6 +64,7 @@ async function api() {
         }, 1000)
     })
 }
+
 async function load({ done }) {
     // Perform API call
     const res = await api()
@@ -43,43 +76,17 @@ async function load({ done }) {
 </script>
 
 <style lang="scss">
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
+.app-main {
     background-color: #010113;
-    color: white;
 }
 
-#app,
-.app-container,
-.grid-view {
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.app-container {
-    padding: 10px;
-}
-
-.grid-view {
-    display: grid;
-    grid-template-columns: 7fr 3fr;
-    grid-template-rows: 7fr 3fr;
-    gap: 10px;
-}
-
-.grid-item {
-    border-radius: 5px;
+.outliner {
     border: 1px solid white;
 }
 
 .tall-grid-item {
-    grid-row: span 2;
+    height: 100%;
+    overflow-y: auto;
 }
 
 h1 {
