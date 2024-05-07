@@ -23,7 +23,7 @@
                     </v-col>
                     <v-col cols="12" md="3" class="outliner fill-height">
                         <v-row style="height: 10%; max-height: 80px" no-gutters>
-                            <v-col class="outliner"></v-col>
+                            <v-col class="outliner">search bar</v-col>
                         </v-row>
                         <v-row style="height: 90%; max-height: 720px" no-gutters>
                             <v-col class="fill-height">
