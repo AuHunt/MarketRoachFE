@@ -1,9 +1,8 @@
-<!-- AppBar.vue -->
 <template>
     <v-app-bar class="outliner" title="Application bar" flat floating height="30" />
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'AppBar',
 }

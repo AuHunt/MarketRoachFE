@@ -1,4 +1,3 @@
-<!-- MainLayout.vue -->
 <template>
     <v-main class="app-main fill-height">
         <v-container class="fill-height outliner" fluid>
@@ -23,7 +22,7 @@
     </v-main>
 </template>
 
-<script>
+<script lang="ts">
 import ChartView from './ChartView.vue'
 import AnalyticsPanel from './AnalyticsPanel.vue'
 import InfoFeed from './InfoFeed.vue'

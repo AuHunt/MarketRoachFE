@@ -1,5 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import vuetify from './vuetify'
+import VueApexCharts from 'vue3-apexcharts'
 
-createApp(App).use(vuetify).mount('#app')
+const app = createApp(App)
+app.use(vuetify)
+app.component('ApexChart', VueApexCharts)
+app.mount('#app')

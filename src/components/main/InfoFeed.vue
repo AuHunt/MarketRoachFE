@@ -18,24 +18,27 @@
     </v-row>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue'
 
 const items = ref(Array.from({ length: 5 }, (k, v) => v + 1))
 
-async function api() {
+const api = async (): Promise<number[]> => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(Array.from({ length: 10 }, (k, v) => v + items.value.at(-1) + 1))
+            // Move the dependency on items.value outside of setTimeout
+            const lastItem = items.value.at(-1) ?? 0
+            console.log(lastItem)
+            resolve(Array.from({ length: 10 }, (k, v) => v + lastItem + 1))
         }, 1000)
     })
 }
 
-async function load({ done }) {
-    // Perform API call
+const load = async () => {
     const res = await api()
+    console.log(res)
     items.value.push(...res)
-    done('ok')
+    console.log(items.value)
 }
 </script>
 

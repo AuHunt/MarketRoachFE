@@ -1,9 +1,8 @@
-<!-- AnalyticsPanel.vue -->
 <template>
     <h1>Market Roach Analytics Panel</h1>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'AnalyticsPanel',
 }
