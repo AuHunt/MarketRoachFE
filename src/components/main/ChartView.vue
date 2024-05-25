@@ -26,7 +26,7 @@ const series = [
 
 <style lang="scss" scoped>
 .chart-container {
-    max-width: 80%;
+    max-width: 50%;
     margin: 0 auto;
 }
 </style>

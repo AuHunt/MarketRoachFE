@@ -2,19 +2,19 @@
     <v-main class="app-main fill-height">
         <v-container class="fill-height outliner" fluid>
             <v-row class="fill-height" no-gutters>
-                <v-col cols="12" md="9" class="outliner">
-                    <v-row class="outliner" style="height: 70%; min-height: 550px" no-gutters>
+                <v-col cols="12" md="9" class="outliner fill-height">
+                    <v-row class="outliner" style="height: 70%" no-gutters>
                         <v-col>
                             <ChartView />
                         </v-col>
                     </v-row>
-                    <v-row class="outliner" style="height: 30%; min-height: 230px" no-gutters>
+                    <v-row class="outliner" style="height: 30%; max-height: 250px" no-gutters>
                         <v-col>
                             <AnalyticsPanel />
                         </v-col>
                     </v-row>
                 </v-col>
-                <v-col cols="12" md="3" class="outliner fill-height">
+                <v-col cols="12" md="3" class="outliner fill-height d-flex flex-column">
                     <InfoFeed />
                 </v-col>
             </v-row>

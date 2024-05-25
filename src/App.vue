@@ -1,5 +1,5 @@
 <template>
-    <v-app style="height: 100vh">
+    <v-app style="min-height: 100vh">
         <!-- <v-navigation-drawer floating temporary></v-navigation-drawer> -->
         <AppBar />
         <MainLayout />
